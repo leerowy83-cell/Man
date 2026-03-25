@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #5b86e5; /* A vibrant blue */
+    --secondary-color: #36d1dc; /* A lighter blue/cyan */
+    --background-gradient-start: #2a2a72;
+    --background-gradient-end: #009ffd;
+    --glass-background: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text-color: #e0e0e0;
+    --text-color-dark: #333;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--background-gradient-start) 0%, var(--background-gradient-end) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden; /* Prevent horizontal scroll for animations */
+}
+
+/* Glassmorphism Effect Base */
+.glass-card {
+    background: var(--glass-background);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px var(--shadow-dark);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 2.5rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure glass cards are above background elements */
+}
+
+/* Header & Navigation */
+header {
+    background: var(--glass-background);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+nav .logo {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 8px var(--secondary-color);
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px); /* Adjust based on header height */
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden; /* For pseudo-elements */
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    background: linear-gradient(45deg, #a1c4fd, #c2e9fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Placeholder sections */
+.section-placeholder {
+    padding: 4rem 2rem;
+    min-height: 50vh; /* Make sections visible for now */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.section-placeholder .glass-card {
+    padding: 3rem;
+}
+
+.section-placeholder h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff; /* White text for section titles */
+}
+
+.section-placeholder p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+/* Background Animated Elements (subtle glassmorphism enhancement) */
+.hero-section::before,
+.hero-section::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.05); /* Very subtle light blobs */
+    border-radius: 50%;
+    filter: blur(50px); /* Blurry effect */
+    animation: float 15s ease-in-out infinite;
+    z-index: 0;
+}
+
+.hero-section::before {
+    width: 250px;
+    height: 250px;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.hero-section::after {
+    width: 300px;
+    height: 300px;
+    bottom: 15%;
+    right: 15%;
+    animation-delay: 7s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-20px, 20px) scale(1.1); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 0 1rem;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+
+    .glass-card {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+
+    .section-placeholder h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    nav .logo {
+        font-size: 1.5rem;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+}
