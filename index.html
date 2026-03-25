@@ -14,6 +14,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -50,10 +51,39 @@
             </div>
         </section>
 
+        <section id="pricing" class="section-placeholder">
+            <div class="glass-card">
+                <h2>Transparent Pricing</h2>
+                <p>Choose your region to see estimated pricing for our services, from basic to enterprise solutions.</p>
+
+                <div class="pricing-selector">
+                    <label for="country-select">Select Your Region:</label>
+                    <select id="country-select">
+                        <option value="us">United States (USD)</option>
+                        <option value="eu">Europe (EUR)</option>
+                        <option value="uk">United Kingdom (GBP)</option>
+                        <option value="asia">Asia (USD est.)</option>
+                        <option value="africa">Africa (USD est.)</option>
+                    </select>
+                </div>
+
+                <div class="pricing-tiers" id="pricing-display">
+                    <!-- Pricing options will be loaded here by JavaScript -->
+                    <p>Please select a region to view estimated pricing.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="section-placeholder">
             <div class="glass-card">
-                <h2>Contact Us</h2>
-                <p>Ready to start your project? Let's talk!</p>
+                <h2>Get in Touch</h2>
+                <p>Ready to start your project or have a question? Reach out to us!</p>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:laisamanu126@gmail.com">laisamanu126@gmail.com</a></p>
+                    <p><strong>WhatsApp:</strong> <a href="https://wa.me/20107153374" target="_blank">0107153374</a></p>
+                    <p><strong>Facebook:</strong> <a href="https://www.facebook.com/lxisee" target="_blank">@lxisee</a></p>
+                    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/laiss3r" target="_blank">@laiss3r</a></p>
+                </div>
             </div>
         </section>
     </main>
@@ -61,5 +91,7 @@
     <footer>
         <p>&copy; 2023 Laisa Dev Studio. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
